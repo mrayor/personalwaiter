@@ -8,6 +8,15 @@ use Session;
 
 class PostsController extends Controller
 {
+
+    //Lock down posts controller
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+
     /**
      * Display a listing of the resource.
      *
