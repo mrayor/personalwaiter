@@ -42,3 +42,7 @@ Route::get('blog/{slug}', ['as' => 'blog.single', 'uses' => 'BlogsController@sin
 // Posts controller route
 Route::resource('posts', 'PostsController');
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
