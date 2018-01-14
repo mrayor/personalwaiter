@@ -34,6 +34,10 @@ Route::get('contact', 'ContactsController@show');
 Route::post('contact', 'ContactsController@mail');
 //blog routes
 
+
+//Search route
+Route::get('search/{s?}', 'SearchesController@getSearch')->where('s', '[\w\d]+');
+
 Route::get('blog', 'PagesController@blog');
 Route::get('blog/{slug}', ['as' => 'blog.single', 'uses' => 'BlogsController@single'])->where('slug', '[\w\d\-\_]+');
 
@@ -43,7 +47,6 @@ Route::get('blog/{slug}', ['as' => 'blog.single', 'uses' => 'BlogsController@sin
 Route::resource('posts', 'PostsController');
 
 //Auth routes
-
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

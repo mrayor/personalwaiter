@@ -3,8 +3,8 @@
 		<div class="sidebar">
 			<div class="widget widget_search">
 				<h3 class="widget-title">Search</h3>
-				<form class="search-form">
-					<input type="search" class="search-field" placeholder="Type & Hit Enter...">
+				<form class="search-form" action="/search/" method="GET">
+					<input type="search" class="search-field" name="s" value="{{ Request::query('s')}}" placeholder="Type & Hit Enter...">
 					<input type="submit" class="search-submit">
 				</form>
 			</div>
