@@ -1089,7 +1089,7 @@ Header
 }
 .navbar-custom .nav li a:hover {
   outline: none;
-  background-color: transparent;
+  background-color: rgba(215, 15, 48, 0.1);
   color: black;
 }
 .navbar-custom .nav li a:focus {

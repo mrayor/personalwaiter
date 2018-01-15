@@ -44,7 +44,7 @@
                 {{ Form::submit('Create Post', ['class' => 'btn btn-default'])}}
             {!! Form::close() !!}
         
-    </div>
+	</div>
 
 </div>
 
