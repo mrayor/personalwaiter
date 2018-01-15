@@ -23,7 +23,7 @@
     at_config = {
     at: "@",
     data: apMentions,
-    headerTpl: '<div class="atwho-header">Member List<small>↑&nbsp;↓&nbsp;</small></div>',
+    //headerTpl: '<div class="atwho-header">Member List<small>↑&nbsp;↓&nbsp;</small></div>',
     insertTpl: "@${login}",
     displayTpl: '<li data-value="${login}">${name} <small>@${login}</small></li>',
     limit: 50,

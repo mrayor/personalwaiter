@@ -7,7 +7,6 @@
 @section('stylesheets')
 	<!-- <link rel='stylesheet' href="{{asset('css/blog_css/bootstrap.css')}}" type='text/css' media='all' /> -->
 	<link rel='stylesheet' href="{{asset('css/blog_css/blog-style.css')}}" type='text/css' media='all' /> 
-	<link rel='stylesheet' href="{{asset('css/blog_css/responsive.css')}}" type='text/css' media='all' /> 
 @endsection
 
 <div class="page-hero" style="background-image: url('/img/subheader_4000_1200.jpg');">
