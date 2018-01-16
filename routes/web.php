@@ -46,6 +46,9 @@ Route::get('blog/{slug}', ['as' => 'blog.single', 'uses' => 'BlogsController@sin
 // Posts controller route
 Route::resource('posts', 'PostsController');
 
+//categories
+Route::resource('categories', 'CategoriesController', ['except'=> ['create']]);
+
 //Auth routes
 Auth::routes();
 

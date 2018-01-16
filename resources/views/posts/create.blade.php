@@ -37,6 +37,12 @@
 				{{ Form::label('slug', 'URL:')}}
                 {{ Form::text('slug', null, ['class' => 'form-control', 'placeholder' => 'Enter URL', 'required' => '', 'minlength' => '5', 'maxlength' => '255' ])}}
 
+				{{ Form::label('category_id', 'Category:')}}
+				<select class="form-control" name="category_id">
+					@foreach($categories as $category)
+						<option value='{{ $category->id }}'>{{ $category->name }}</option>
+					@endforeach
+				</select>
 
                 {{ Form::label('body', 'Post Body:')}}
                 {{ Form::textarea('body', null, ['class' => 'form-control luna-message', 'placeholder' => 'Enter Blog Post Here', 'required' => ''])}}

@@ -35,9 +35,9 @@
 			<div class="col-md-3">
 				<div class= "well">
 					<dl class="dl-horizontal">
-					<!--	<dt>Url:</dt>
-						<dd><a href="{{ url($post->slug) }}">{{ url($post->slug) }}</a></dd>
-					</dl> -->
+						<dt>Category:</dt>
+						<dd>{{ $post->category->name }}</dd>
+					</dl> 
 					<dl class="dl-horizontal">
 						<dt>Created At:</dt>
 						<dd>{{ date('M j, Y H:i',strtotime($post->created_at)) }}</dd>
