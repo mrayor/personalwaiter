@@ -39,7 +39,11 @@
 				{{ Form::label('category_id', 'Category:') }}
 				{{ Form::select('category_id', $categories, null, ['class' => 'form-control']) }}
 
-                {{{ Form::label('body', 'Body:')}}}
+				{{ Form::label('tags', 'Tags:') }}
+				{{ Form::select('tags[]', $tags, null, ['class' => 'form-control js-example-basic-multiple', 'multiple' => 'multiple']) }}
+
+
+                {{ Form::label('body', 'Body:') }}
 				{{ Form::textarea('body', null, ['class' => 'form-control', 'required' => '']) }}
 			</div>
 			<div class="col-md-3">
@@ -69,3 +73,4 @@
 	</div>
 </div>
 @endsection
+

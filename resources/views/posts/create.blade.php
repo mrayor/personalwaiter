@@ -4,6 +4,7 @@
 
 @section('content')
 
+
 <div class="page-hero" style="background-image: url('/img/subheader_4000_1200.jpg');">
 	<h2>Create Post</h2>
 </div>
@@ -43,6 +44,16 @@
 						<option value='{{ $category->id }}'>{{ $category->name }}</option>
 					@endforeach
 				</select>
+				
+	
+				{{ Form::label('tags', 'Tags:')}}
+				<select class="form-control js-example-basic-multiple" name="tags[]" multiple="multiple">
+					@foreach($tags as $tag)
+						<option value='{{ $tag->id }}'>{{ $tag->name }}</option>
+					@endforeach
+				</select>
+
+				
 
                 {{ Form::label('body', 'Post Body:')}}
                 {{ Form::textarea('body', null, ['class' => 'form-control luna-message', 'placeholder' => 'Enter Blog Post Here', 'required' => ''])}}

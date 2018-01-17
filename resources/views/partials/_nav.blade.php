@@ -25,7 +25,7 @@ You are using an <strong>outdated</strong> browser. Please <a href="http://brows
                 @else
                     <li id="menu-item-22" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-22"><a title="Post" href="{{ route('posts.index') }}">Posts</a></li>
                     <li id="menu-item-20" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-20"><a title="Categories" href="{{ route('categories.index') }}">Categories</a></li>
-                    <li id="menu-item-21" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-21"><a title="Tags" href="/tags">Tags</a></li>
+                    <li id="menu-item-21" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-21"><a title="Tags" href="{{ route('tags.index') }}">Tags</a></li>
                     <li id="menu-item-29" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-29"><a title="Logout" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a><form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">{{ csrf_field() }}</form></li>
                 @endif
             </ul>

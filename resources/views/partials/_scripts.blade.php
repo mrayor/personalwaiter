@@ -11,4 +11,5 @@
 <script type='text/javascript' src="{{asset('js/bootstrap.min.js')}}"></script>
 <script type='text/javascript' src="{{asset('js/bst.js')}}"></script>
 <script type='text/javascript' src="{{asset('js/parallax.js')}}"></script>
+{!! Html::script('js/select2.min.js') !!}
 @yield('scripts')
