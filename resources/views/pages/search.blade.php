@@ -1,6 +1,6 @@
 @extends('layouts.master') 
-
-@section('title', "Search on $s") 
+<?php $titleTag = htmlspecialchars($s); ?>
+@section('title', "Search on $titleTag") 
 
 @section('content') 
 

@@ -1,6 +1,6 @@
 @extends('layouts.master')
-
-@section('title', "$tag->name Tag")
+<?php $titleTag = htmlspecialchars($tag->name); ?>
+@section('title', "$titleTag Tag")
 
 @section('content')
 

@@ -1,5 +1,5 @@
 @extends('layouts.master') 
-
+<?php $titleTag = htmlspecialchars($post->title); ?>
 @section('title', "$post->title") 
 
 @section('content') 
