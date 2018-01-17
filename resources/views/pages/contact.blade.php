@@ -26,14 +26,10 @@
 
 <div class="whitebg-container">
 	<div class="container">
-		@if(session('status'))
-            <div class='alert alert-success'>
-                {{ session('status') }}
-            </div>
-		@endif
+		@include('partials._messages')
 		<article role="article" id="post_13" class="post-13 page type-page status-publish hentry">
 			<div class="col-12 col-md-6">
-				<form class="form-horizontal" method="POST" action="/contact">
+				<form class="form-horizontal" method="POST" action="{{ url('contact') }}">
 					{{ csrf_field() }}
 					<div class="form-group">
 						<label for="Name" style="color: black;">Name: </label>

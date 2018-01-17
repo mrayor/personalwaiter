@@ -30,8 +30,8 @@ Route::post('auth/register', 'Auth\AuthController@postRegister');*/
 Route::get('/', 'PagesController@index');
 Route::get('about', 'PagesController@about');
 Route::get('career', 'PagesController@career');
-Route::get('contact', 'ContactsController@show');
-Route::post('contact', 'ContactsController@mail');
+Route::get('contact', ['as' => 'pages.contact', 'uses' => 'PagesController@show']);
+Route::post('contact', 'PagesController@mail');
 //blog routes
 
 

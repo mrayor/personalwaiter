@@ -28,11 +28,11 @@
 							</p>
 							<p style="line-height:200%;font-weight:300">You have a new contact request</p>
 							<div style="line-height:200%;font-weight:300">
-								<strong>Name:</strong> {{ $request->name }}
+								<strong>Name:</strong> {{ $name }}
 								<br>
-								<strong>Email:</strong> {{ $request->email }}
+								<strong>Email:</strong> {{ $email }}
 								<br>
-								<strong>Message:</strong> {{ $request->message }}
+								<strong>Message:</strong> {{ $bodyMessage }}
 							</div>
 							<p style="line-height:200%">
 								<font color="#204056"></font>
