@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Post;
+use App\Tag;
+use App\Category;
 use Mail;
 use Session;
 
@@ -19,7 +21,9 @@ class PagesController extends Controller
 
     public function blog(){
         $posts = Post::orderBy('created_at', 'desc')->paginate(3);
-        return view('pages.blog')->withPosts($posts);
+        $tags = Tag::all();
+        $categories  = Category::all();
+        return view('pages.blog')->withPosts($posts)->withCategories($categories)->withTags($tags);
     }
 
    /* public function single(){

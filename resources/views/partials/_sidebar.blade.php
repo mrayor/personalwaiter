@@ -12,26 +12,13 @@
 
 			<div class="widget widget_categories">
 				<h3 class="widget-title">Categories</h3>
-				<ul>
-					<li>
-						<a href="#">Chicken Tinga Nachos (9)</a>
-					</li>
-					<li>
-						<a href="#">Sweet and Sour Pork Chops (9)</a>
-					</li>
-					<li>
-						<a href="#">Green Chile And Chicken Stew (9)</a>
-					</li>
-					<li>
-						<a href="#">Pecan Pie Macarons (9)</a>
-					</li>
-					<li>
-						<a href="#">Brazilian Burger With Egg (9)</a>
-					</li>
-					<li>
-						<a href="#">Sweet and Sour Pork Chops (9)</a>
-					</li>
-				</ul>
+				@foreach($categories as $category)
+					<ul>
+						<li>
+							<a>{{ $category->name }} ({{ $category->posts()->count() }})</a>
+						</li>
+					</ul>
+				@endforeach
 			</div>
 			<!-- /.widget_categories -->
 
@@ -109,17 +96,9 @@
 			<div class="widget widget_tag">
 				<h3 class="widget-title">Popular Tags</h3>
 				<div class="tag-list">
-					<a class="active" href="#">example, </a>
-					<a href="#">Gallery, </a>
-					<a href="#">Image, </a>
-					<a href="#">quote, </a>
-					<a href="#">tag, </a>
-					<a href="#">Video,</a>
-					<a href="#">PSD Teplates,</a>
-					<a href="#">Business, </a>
-					<a href="#">Portfolio, </a>
-					<a href="#">Construction, </a>
-					<a href="#">One Page, </a>
+					@foreach($tags as $tag)
+						<a>{{ $tag->name }}</a>
+					@endforeach
 				</div>
 			</div>
 			<!-- /.widget_tag -->
