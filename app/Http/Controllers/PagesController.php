@@ -20,15 +20,11 @@ class PagesController extends Controller
     }
 
     public function blog(){
-        $posts = Post::orderBy('created_at', 'desc')->paginate(3);
+        $posts = Post::orderBy('created_at', 'desc')->paginate(2);
         $tags = Tag::all();
         $categories  = Category::all();
         return view('pages.blog')->withPosts($posts)->withCategories($categories)->withTags($tags);
     }
-
-   /* public function single(){
-        return view('blog.single');
-    }   */
 
     public function career(){
         return view('pages.career');

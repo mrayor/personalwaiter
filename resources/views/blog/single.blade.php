@@ -39,7 +39,7 @@
 								<a href="#">{{ $post->title }}</a>
 							</h2>
 							<p class="time-post">On {{ date('M j, Y', strtotime($post->created_at))}}
-								<a href="#">3 comments</a>
+								<a href="#">{{ $post->comments()->count() }} comments</a>
 							</p>
 						</div>
 						<!-- /.header-post -->
@@ -76,21 +76,21 @@
 
 						<div class="comment-post">
 							<div class="comment-list-wrap">
-								<h4 class="title comment-title">Comment: 2 </h4>
+								<h4 class="title comment-title">Comment: {{ $post->comments()->count() }} </h4>
 								<ul class="comment-list">
 									@foreach($post->comments as $comment)
 										<li>
 											<article class="comment">
 												<div class="comment-avatar">
-													<img src="/img/blog_img/profile-thumbnail.png" alt="image">
+													<img src="{{ "https://www.gravatar.com/avatar/" .md5(strtolower(trim($comment->email))) . "?s=50&d=monsterid" }}" alt="image">
 												</div>
 												<div class="comment-detail">
 													<div class="comment-meta">
 														<span class="comment-author">
-															<a href="#">{{ $comment->name }}</a>
+															<a>{{ $comment->name }}</a>
 														</span>
 														<span class="comment-date">
-															<a> {{ date('M j, Y', strtotime($comment->created_at))}}</a> 
+															<a> {{ date('M j, Y - g:iA', strtotime($comment->created_at))}}</a> 
 														</span>
 													</div>
 													<p class="comment-body">{{ $comment->comment }}</p>

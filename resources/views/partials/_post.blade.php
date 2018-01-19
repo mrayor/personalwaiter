@@ -4,7 +4,7 @@
 			<a href=" {{ url('blog/'.$post->slug) }} ">{{ $post->title }}</a>
 		</h2>
 		<p class="time-post">On {{ date('M j, Y', strtotime($post->created_at))}}
-			<a href="#">3 comments</a>
+			<a href="#">{{ $post->comments()->count() }} comments</a>
 		</p>
 	</div>
 	<!-- /.header-post -->
