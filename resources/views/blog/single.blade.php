@@ -1,6 +1,6 @@
 @extends('layouts.master') 
 <?php $titleTag = htmlspecialchars($post->title); ?>
-@section('title', "$post->title") 
+@section('title', "$titleTag") 
 
 @section('content') 
 
@@ -27,6 +27,9 @@
 
 <div class="main-content blog-single">
 	<div class="container">
+		<div class="container" style="margin: 20px">
+			@include('partials._messages')
+		</div>
 		<div class="row">
 			<div class="col-md-8">
 				<div class="content-wrap">
@@ -75,81 +78,49 @@
 							<div class="comment-list-wrap">
 								<h4 class="title comment-title">Comment: 2 </h4>
 								<ul class="comment-list">
-									<li>
-										<article class="comment">
-											<div class="comment-avatar">
-												<img src="/img/blog_img/profile-thumbnail.png" alt="image">
-											</div>
-											<div class="comment-detail">
-												<div class="comment-meta">
-													<span class="comment-author">
-														<a href="#">Gloria Richards</a>
-													</span>
-													<span class="comment-date">
-														<a href="">8 March, 2016 at 9:00 am</a>
-													</span>
-
+									@foreach($post->comments as $comment)
+										<li>
+											<article class="comment">
+												<div class="comment-avatar">
+													<img src="/img/blog_img/profile-thumbnail.png" alt="image">
 												</div>
-												<p class="comment-body">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque
-													corrupti quos dolores et molestias excepturi sint occaecati cupiditate provident similique sunt in culpa qui
-													off icia deserunt mollitia animi</p>
-												<a href="#" class="comment-reply">Reply</a>
-											</div>
-											<!-- /.comment-detail -->
-
-										</article>
-										<!-- /.comment -->
-									</li>
-
-									<li>
-										<article class="comment style1">
-											<div class="comment-avatar">
-												<img src="/img/blog_img/profile-thumbnail.png" alt="image">
-											</div>
-											<div class="comment-detail">
-												<div class="comment-meta">
-													<span class="comment-author">
-														<a href="#">Gloria Richards</a>
-													</span>
-													<span class="comment-date">
-														<a href="">8 March, 2016 at 9:00 am</a>
-													</span>
-
+												<div class="comment-detail">
+													<div class="comment-meta">
+														<span class="comment-author">
+															<a href="#">{{ $comment->name }}</a>
+														</span>
+														<span class="comment-date">
+															<a> {{ date('M j, Y', strtotime($comment->created_at))}}</a> 
+														</span>
+													</div>
+													<p class="comment-body">{{ $comment->comment }}</p>
+													<a href="#respond" class="comment-reply">Reply</a>
 												</div>
-												<p class="comment-body">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque
-													corrupti quos dolores et molestias excepturi sint occaecati cupiditate provident similique sunt in culpa qui
-													off icia deserunt mollitia animi</p>
-												<a href="#" class="comment-reply">Reply</a>
-											</div>
-											<!-- /.comment-detail -->
-										</article>
-										<!-- /.comment -->
-									</li>
+													<!-- /.comment-detail -->
+											</article>
+												<!-- /.comment -->
+										</li>
+									@endforeach
 								</ul>
-								<!-- /.comment-list -->
-							</div>
-							<!-- /.comment-list-wrap -->
-
-							<div id="respond" class="comment-respond">
+									<!-- /.comment-list -->
+								</div>
+								<!-- /.comment-list-wrap -->
+								<div id="respond" class="comment-respond">
 								<h4 class="title comment-title style1">Leave a comment</h4>
-								<form action="#" method="post" id="commentform" class="comment-form" novalidate="">
+								{{ Form::open(['route' => ['comments.store', $post->id], 'method' => 'POST', 'class' => 'comment-form', 'id' => 'commentform']) }}
 									<fieldset class="name-container">
-										<input type="text" id="author" placeholder="Name" class="tb-my-input" name="author" tabindex="1" value="" size="32" aria-required="true">
+										{{ Form::text('name', null, ['class' => 'tb-my-input', 'placeholder' => 'Name', 'required' => '', 'maxlength' => '255']) }}
 									</fieldset>
-
 									<fieldset class="email-container">
-										<input type="text" id="email" placeholder="Email" class="tb-my-input" name="email" tabindex="2" value="" size="32" aria-required="true">
+										{{ Form::email('email', null, ['class' => 'tb-my-input', 'placeholder' => 'Email','required' => '', 'maxlength' => '255']) }}
 									</fieldset>
-
 									<fieldset class="message">
-										<textarea id="comment-message" placeholder="Comment" name="comment" rows="8" tabindex="4" aria-required="true"></textarea>
+										{{ Form::textarea('comment', null, ['id' => 'comment-message', 'placeholder' => 'Comment', 'required' => '', 'minlength' => '5', 'maxlength' => '255']) }}
 									</fieldset>
-									<p class="form-submit">
-										<input name="submit" type="submit" id="comment-reply" class="submit" value="Post comment">
-										<input type="hidden" name="comment_post_ID" value="27" id="comment_post_ID">
-										<input type="hidden" name="comment_parent" id="comment_parent" value="0">
-									</p>
-								</form>
+									<div class="form-submit">
+										{{ Form::submit('Post Comment', ['class' => 'submit', 'id' => 'comment-reply']) }}
+									</div>
+								{{ Form::close() }}
 							</div>
 							<!-- /#respond -->
 						</div>
