@@ -34,6 +34,37 @@
 				@foreach ($post->tags as $tag)
 					<span class="label">{{ $tag->name }}</span>
 				@endforeach
+				<div id="backend-comments" style="margin-top: 20px;">
+					<h3>Comments <small>{{ $post->comments()->count() }} total</small></h3>
+
+					<table class="table">
+							<thead>
+								<tr>
+									<th scope="col">Name</th>
+									<th scope="col">Email</th>
+									<th scope="col">Comments</th>
+									<th scope="col"></th>
+								</tr>
+							</thead>
+							<tbody>
+								@foreach($post->comments as $comment)
+								<tr>
+									<th scope="row">{{ $comment->name }}</th>
+									<td>{{ $comment->email }}</td>
+									<td>{{ $comment->comment }}</td>
+									<td>
+										{!! Html::linkRoute('comments.edit', 'Edit', array($comment->id), ['class'=>'btn btn-default btn-sm', 'style'=>'padding:13px; color:white']) !!}
+<!--<a href="{{ route('comments.delete', $comment->id) }}" class="btn btn-success btn-sm" style="padding:13px; color:white">Delete</a> -->
+										{!! Html::linkRoute('comments.delete', 'Delete', array($comment->id), ['class'=>'btn btn-success btn-sm', 'style' =>'padding:13px; color:white']) !!} 
+									</td>
+								</tr>
+								@endforeach
+							</tbody>
+						</table>
+		
+
+
+				</div>
 			</div>
 		
 			<div class="col-md-3">
