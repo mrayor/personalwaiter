@@ -17,7 +17,7 @@
 	<!-- /.feature-post -->
 
 	<div class="content-post">
-		<p>{{ substr($post->body, 0, 300) }}{{ strlen($post->body) > 300 ? "..." : ""}}</p>
+		<p>{{ substr(strip_tags($post->body), 0, 300) }}{{ strlen(strip_tags($post->body)) > 300 ? "..." : ""}}</p>
 
 		<div class="readmore">
 			<a href="{{ url('blog/'.$post->slug) }}">Continue reading...</a>

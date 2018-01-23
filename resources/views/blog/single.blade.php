@@ -50,7 +50,7 @@
 						</div>
 						<!-- /.feature-post -->
 						<div class="content-post">			
-							<p>{{ $post->body}}</p>
+							<p>{!! $post->body !!}</p>
 						</div>
 						<!-- /.content-post -->
 

@@ -2,6 +2,19 @@
 
 @section('title', 'Create New Post')
 
+@section('stylesheets')
+	<script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
+
+	<script>
+		tinymce.init({ 
+			selector:'textarea',
+			plugins: "link image",
+			menubar: false,
+			branding: false
+		});
+	</script>
+@endsection
+
 @section('content')
 
 
@@ -56,9 +69,9 @@
 				
 
                 {{ Form::label('body', 'Post Body:')}}
-                {{ Form::textarea('body', null, ['class' => 'form-control luna-message', 'placeholder' => 'Enter Blog Post Here', 'required' => ''])}}
+                {{ Form::textarea('body', null, ['class' => 'form-control luna-message', 'placeholder' => 'Enter Blog Post Here'])}}
 
-                {{ Form::submit('Create Post', ['class' => 'btn btn-default'])}}
+                {{ Form::submit('Create Post', ['class' => 'btn btn-default', 'style' => 'margin-top: 20px'])}}
             {!! Form::close() !!}
         
 	</div>

@@ -60,7 +60,7 @@
 						<tr>
 							<th scope="row">{{ $post->id }}</th>
 							<td>{{ $post->title }}</td>
-							<td>{{ substr($post->body, 0, 50) }} {{strlen($post->body) > 50 ? "..." : ""}}</td>
+							<td>{{ substr(strip_tags($post->body), 0, 50) }} {{strlen(strip_tags($post->body)) > 50 ? "..." : ""}}</td>
 							<td>{{ date('M j, Y', strtotime($post->created_at))}}</td>
 							<td>
                                 {!! Html::linkRoute('posts.show', 'View', array($post->id), ['class'=>'btn btn-default btn-sm', 'style'=>'padding:13px; color:white']) !!}

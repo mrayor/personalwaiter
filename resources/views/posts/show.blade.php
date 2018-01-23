@@ -30,7 +30,7 @@
 	<div class="row" style="margin:20px">
 			<div class="col-md-8 ">
 				<h1>{{ $post->title }}</h1>
-				<p class="lead"> {{ $post->body}} </p>
+				<p class="lead"> {!! $post->body !!} </p>
 				@foreach ($post->tags as $tag)
 					<span class="label">{{ $tag->name }}</span>
 				@endforeach
