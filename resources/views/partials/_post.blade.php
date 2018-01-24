@@ -11,7 +11,7 @@
 
 	<div class="feature-post">
 		<a href="{{ url('blog/'.$post->slug) }}">
-			<img src="/img/blog_img/blog-img.jpg" alt="image">
+			<img src="{{ asset('img/blog_img/' . $post->image) }}" alt="image">
 		</a>
 	</div>
 	<!-- /.feature-post -->

@@ -44,9 +44,7 @@
 						</div>
 						<!-- /.header-post -->
 						<div class="feature-post">
-							<a href="blog-single.html">
-								<img src="/img/blog_img/blog-img.jpg" alt="image">
-							</a>
+							<img src="{{ asset('img/blog_img/' . $post->image) }}" alt="image">
 						</div>
 						<!-- /.feature-post -->
 						<div class="content-post">			

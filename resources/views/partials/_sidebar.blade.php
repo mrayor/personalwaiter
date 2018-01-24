@@ -25,41 +25,19 @@
 			<div class="widget widget_recent_entries clearfix">
 				<h3 class="widget-title">Recent Post</h3>
 				<ul class="recent-post clearfix">
-					<li>
-						<div class="thumb">
-							<img src="/img/blog_img/blog-thumbnail.jpg" alt="image">
-						</div>
-						<div class="text">
-							<h4>
-								<a href="#">Post with couple photos inside</a>
-							</h4>
-							<p>On 13 Nov 2015</p>
-						</div>
-					</li>
-
-					<li>
-						<div class="thumb">
-							<img src="/img/blog_img/blog-thumbnail.jpg" alt="image">
-						</div>
-						<div class="text">
-							<h4>
-								<a href="#">Post with couple photos inside</a>
-							</h4>
-							<p>On 13 Nov 2015</p>
-						</div>
-					</li>
-
-					<li>
-						<div class="thumb">
-							<img src="/img/blog_img/blog-thumbnail.jpg" alt="image">
-						</div>
-						<div class="text">
-							<h4>
-								<a href="#">Post with couple photos inside</a>
-							</h4>
-							<p>On 13 Nov 2015</p>
-						</div>
-					</li>
+					@foreach($posts as $post)
+						<li>
+							<div class="thumb">
+								<img src="{{ asset('img/blog_img/' . $post->image) }}" alt="image" height="85px" width="100px">
+							</div>
+							<div class="text">
+								<h4>
+									<a href="{{ url('blog/'.$post->slug) }}">{{ $post->title }}</a>
+								</h4>
+								<p>On {{ date('M j, Y', strtotime($post->created_at)) }}</p>
+							</div>
+						</li>
+					@endforeach
 				</ul>
 			</div>
 			<!-- /.widget_recent_entries -->

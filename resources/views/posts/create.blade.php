@@ -44,7 +44,7 @@
     <div class="col-md-8 col-md-offset-2">
         <h1>Create New Post</h1>
         <hr>
-            {!! Form::open(['route' => 'posts.store']) !!}
+            {!! Form::open(['route' => 'posts.store', 'files' => 'true']) !!}
                 {{ Form::label('title', 'Title:')}}
 				{{ Form::text('title', null, ['class' => 'form-control input-lg', 'placeholder' => 'Post Title', 'required' => '', 'maxlength' => '255' ])}}
 				
@@ -66,7 +66,8 @@
 					@endforeach
 				</select>
 
-				
+				{{ Form::label('featured_image', 'Upload Image:') }}
+				{{ Form::file('featured_image') }}
 
                 {{ Form::label('body', 'Post Body:')}}
                 {{ Form::textarea('body', null, ['class' => 'form-control luna-message', 'placeholder' => 'Enter Blog Post Here'])}}

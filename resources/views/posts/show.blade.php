@@ -30,6 +30,9 @@
 	<div class="row" style="margin:20px">
 			<div class="col-md-8 ">
 				<h1>{{ $post->title }}</h1>
+				<div class="feature-post">
+					<img src="{{ asset('img/blog_img/' . $post->image) }}" alt="image">
+				</div>
 				<p class="lead"> {!! $post->body !!} </p>
 				@foreach ($post->tags as $tag)
 					<span class="label">{{ $tag->name }}</span>
