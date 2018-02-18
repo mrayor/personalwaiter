@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Tag;
+use App\Category;
 use App\Post;
 
 class SearchesController extends Controller
@@ -12,6 +14,8 @@ class SearchesController extends Controller
 
         // Query and paginate result
         $posts = Post::where('title', 'like', "%$s%")->orWhere('body', 'like', "%$s%")->paginate(2);
-        return view('pages.search', ['posts' => $posts, 's' => $s ]);
+        $tags = Tag::all();
+        $categories  = Category::all();
+        return view('pages.search', ['posts' => $posts, 's' => $s ])->withCategories($categories)->withTags($tags);
     }
 }
