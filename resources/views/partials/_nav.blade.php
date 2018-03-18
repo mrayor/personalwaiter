@@ -10,7 +10,7 @@ You are using an <strong>outdated</strong> browser. Please <a href="http://brows
                 <i class="fa fa-bars" style= "color: red;"></i>
             </button>
             <a class="navbar-brand page-scroll header__logo__a" href="/">
-                <img class="nav-logo" src="/img/logo.jpg">
+                <img class="nav-logo" src="/img/logo.svg">
             </a>
         </div>
     <!-- Collect the nav links, forms, and other content for toggling -->
