@@ -21,7 +21,7 @@ You are using an <strong>outdated</strong> browser. Please <a href="http://brows
                     <li id="menu-item-20" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-20"><a title="Careers" href="/career">Careers</a></li>
                     <li id="menu-item-21" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-21"><a title="Blog" href="/blog">Blog</a></li>
                     <li id="menu-item-29" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-29"><a title="Contact" href="/contact">Contact</a></li>
-                    <li id="menu-item-29" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-29"><a title="Order" href="http://order.personalwaiter.dev" rel="noopener noreferrer" target="_blank">Order</a></li>
+                    <li id="menu-item-29" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-29"><a title="Order" href="http://order.personalwaiter.test" rel="noopener noreferrer" target="_blank">Order</a></li>
                 @else
                     <li id="menu-item-22" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-22"><a title="Post" href="{{ route('posts.index') }}">Posts</a></li>
                     <li id="menu-item-20" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-20"><a title="Categories" href="{{ route('categories.index') }}">Categories</a></li>

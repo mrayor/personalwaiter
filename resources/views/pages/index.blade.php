@@ -14,7 +14,7 @@
 						<div class="row">
 							<div class="col-md-8 col-md-offset-2">
 								<h1 class="brand-heading">Order Delicious Food Online</h1>
-								<a href="http://order.personalwaiter.dev" rel="noopener noreferrer" target="_blank">
+								<a href="http://order.personalwaiter.test" rel="noopener noreferrer" target="_blank">
 									<button class="btn btn-default">Order Now</button>
 								</a>
 							</div>
@@ -26,7 +26,7 @@
 						<div class="row">
 							<div class="col-md-8 col-md-offset-2">
 								<h1 class="brand-heading">We Deliver Good Food for You</h1>
-								<a href="http://order.personalwaiter.dev" rel="noopener noreferrer" target="_blank">
+								<a href="http://order.personalwaiter.test" rel="noopener noreferrer" target="_blank">
 									<button class="btn btn-default">Order Now</button>
 								</a>
 							</div>
